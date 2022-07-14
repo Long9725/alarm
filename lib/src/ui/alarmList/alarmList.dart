@@ -1,9 +1,6 @@
-import 'package:alarm/src/ui/widgets/switchByPlatform.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 
 import 'componenets/body.dart';
-import 'componenets/textCard.dart';
 
 class AlarmListPage extends StatelessWidget {
   @override
