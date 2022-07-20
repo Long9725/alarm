@@ -29,9 +29,7 @@ class AlarmListBody extends StatelessWidget {
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
               ));
         } else {
-          return AlarmCard(
-            isSwitched: isSwitched[index - 1],
-          );
+          return AlarmCard(isSwitched: isSwitched[index - 1]);
         }
       },
       separatorBuilder: (BuildContext context, int index) {
