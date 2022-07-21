@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:alarm/src/ui/alarmList/alarmList.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -10,7 +11,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(primarySwatch: Colors.red, primaryColor: Colors.red),
+      theme: ThemeData.dark(),
+      darkTheme: ThemeData.dark(),
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: [
+        const Locale('ko', 'KR'),
+      ],
       home: AlarmListPage(),
     );
   }

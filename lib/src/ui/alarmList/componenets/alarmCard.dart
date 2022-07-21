@@ -20,11 +20,13 @@ class AlarmCard extends StatelessWidget {
           );
         },
         child: Padding(
-            padding:
-            EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
+            padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
             child: Row(
               children: [
-                Expanded(child: TextCard()),
+                Expanded(
+                    child: TextCard(
+                  isSwitched: isSwitched,
+                )),
                 SwitchByPlatForm(isSwitched: isSwitched)
               ],
             )));

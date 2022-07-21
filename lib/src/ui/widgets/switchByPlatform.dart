@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 
 class SwitchByPlatForm extends StatefulWidget {
-  SwitchByPlatForm({required this.isSwitched});
+  SwitchByPlatForm({Key? key, required this.isSwitched}) : super(key: key);
 
   bool isSwitched;
 

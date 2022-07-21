@@ -1,3 +1,4 @@
+import 'package:alarm/src/ui/widgets/switchByPlatform.dart';
 import 'package:flutter/material.dart';
 
 import 'alarmCard.dart';
@@ -26,7 +27,7 @@ class AlarmListBody extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 16.0),
               child: Text(
                 "알람",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                style: TextStyle(fontSize: 28, fontWeight: FontWeight.w600),
               ));
         } else {
           return AlarmCard(isSwitched: isSwitched[index - 1]);
