@@ -6,9 +6,11 @@ import '../../alarmDetail/alarmDetail.dart';
 import '../../widgets/switchByPlatform.dart';
 
 class AlarmCard extends StatelessWidget {
-  AlarmCard({required this.isSwitched});
+  AlarmCard({Key? key, required this.isSwitched, required this.onChanged})
+      : super(key: key);
 
-  bool isSwitched;
+  final bool isSwitched;
+  final Function(bool) onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -25,9 +27,11 @@ class AlarmCard extends StatelessWidget {
               children: [
                 Expanded(
                     child: TextCard(
+                  key: key,
                   isSwitched: isSwitched,
                 )),
-                SwitchByPlatForm(isSwitched: isSwitched)
+                SwitchByPlatForm(
+                    key: key, isSwitched: isSwitched, onChanged: onChanged)
               ],
             )));
   }

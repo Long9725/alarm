@@ -5,9 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 
 class SwitchByPlatForm extends StatefulWidget {
-  SwitchByPlatForm({Key? key, required this.isSwitched}) : super(key: key);
+  const SwitchByPlatForm(
+      {Key? key, required this.isSwitched, required this.onChanged})
+      : super(key: key);
 
-  bool isSwitched;
+  final bool isSwitched;
+  final Function(bool) onChanged;
 
   @override
   SwitchByPlatFormState createState() => SwitchByPlatFormState();
@@ -19,22 +22,24 @@ class SwitchByPlatFormState extends State<SwitchByPlatForm> {
     return Platform.isIOS
         ? CupertinoSwitch(
             value: widget.isSwitched,
-            onChanged: (value) {
-              setState(() {
-                widget.isSwitched = value;
-              });
-              widget.isSwitched = value;
-            },
+            // onChanged: (value) {
+            //   setState(() {
+            //     widget.isSwitched = value;
+            //   });
+            //   widget.isSwitched = value;
+            // },
+            onChanged: widget.onChanged,
             activeColor: Colors.green,
           )
         : Switch(
             value: widget.isSwitched,
-            onChanged: (value) {
-              setState(() {
-                widget.isSwitched = value;
-              });
-              widget.isSwitched = value;
-            },
+            // onChanged: (value) {
+            //   setState(() {
+            //     widget.isSwitched = value;
+            //   });
+            //   widget.isSwitched = value;
+            // },
+            onChanged: widget.onChanged,
             activeColor: Colors.green,
             activeTrackColor: Colors.lightGreenAccent);
   }

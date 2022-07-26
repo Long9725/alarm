@@ -16,6 +16,7 @@ class TextCardState extends State<TextCard> {
     // TODO: SwitchByPlatform이 변경되면 textColor도 변경되게 하기
     Color textColor = widget.isSwitched ? Colors.white : IOS_SYSTEM_GRAY[0];
 
+    // TODO: TextStyle에서 중복되는 textColor를 theme로 관리하기
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

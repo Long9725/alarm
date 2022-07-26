@@ -6,8 +6,8 @@ class AlarmDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    List<Widget> children = [Text("하이")];
 
+    // TODO: 배경색 찾기
     return Scaffold(
         backgroundColor: Color(0xff171717),
         appBar: AppBar(
