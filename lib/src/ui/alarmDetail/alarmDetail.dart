@@ -1,4 +1,8 @@
+import 'dart:core';
+
 import 'package:alarm/src/constants/color.dart';
+import 'package:alarm/src/constants/padding.dart';
+import 'package:alarm/src/ui/widgets/titleWithDescriptionBox.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -45,30 +49,29 @@ class AlarmDetailPage extends StatelessWidget {
                       mode: CupertinoDatePickerMode.time,
                       onDateTimeChanged: (dateTime) {},
                     ))),
-            Padding(
-                padding: EdgeInsets.all(16),
-                child: InkWell(
-                    child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+            Container(
+                decoration: BoxDecoration(
+                    borderRadius:
+                        BorderRadius.all(Radius.circular(kDefaultPadding)),
+                    color: IOS_SYSTEM_GRAY[2]),
+                child: Column(
                   children: [
-                    Expanded(
-                        child: Text(
-                      "반복",
-                      style: TextStyle(color: Colors.white),
-                    )),
-                    Text(
-                      "안 함",
-                      style: TextStyle(
-                        color: IOS_SYSTEM_GRAY[0],
-                      ),
-                    ),
-                    Icon(
-                      Icons.arrow_right_alt_outlined,
-                      color: IOS_SYSTEM_GRAY[0],
-                    )
+                    InkWell(
+                        onTap: () {},
+                        child: TitleWithDescriptionBox(
+                          title: Text(
+                            "반복",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          description: Text(
+                            "안 함 >",
+                            style: TextStyle(
+                              color: IOS_SYSTEM_GRAY[0],
+                            ),
+                          ),
+                        ))
                   ],
-                ))),
+                )),
             Text("달력")
           ],
         ));

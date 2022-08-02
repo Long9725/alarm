@@ -31,7 +31,7 @@ class AlarmListBody extends StatelessWidget {
               return AlarmCard(
                 isSwitched: value[index - 1],
                 onChanged: (value) =>
-                    _controller.isSwitch(index: index - 1, isSwitched: value),
+                    _controller.switching(index: index - 1, isSwitched: value),
               );
             },
           );
